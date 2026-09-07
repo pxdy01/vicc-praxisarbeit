@@ -1,0 +1,15 @@
+subscription_id  = "00000000-0000-0000-0000-000000000000"
+prefix           = "vicc"
+location         = "switzerlandnorth"
+
+docker_image     = "deinuser/vicc-api"
+docker_image_tag = "1.0.0"
+
+app_service_sku  = "B1"
+
+postgres_admin_username = "pgadmin"
+postgres_admin_password = "CHANGE_ME_STRONG_PASSWORD!"
+postgres_sku_name       = "B_Standard_B1ms"
+postgres_storage_mb     = 32768
+postgres_version        = "16"
+postgres_database_name  = "appdb"
