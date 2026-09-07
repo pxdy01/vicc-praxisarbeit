@@ -2,5 +2,7 @@ terraform/terraform.tfvars
 terraform/terraform.tfstate
 terraform/terraform.tfstate.backup
 terraform/.terraform/
-terraform/.terraform.lock.hclterraform/tfplan
+terraform/.terraform.lock.hcl
+terraform/tfplan
 *.tfplan
+app/__pycache__/
