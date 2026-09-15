@@ -50,7 +50,25 @@ Die Tabelle `tasks` wird beim ersten Zugriff automatisch angelegt.
 
 ---
 
-## Anleitung (Windows PowerShell)
+## Schnellstart (ein Skript)
+
+`scripts/deploy.ps1` führt die Schritte 1–6 unten automatisiert aus
+(Docker Desktop starten, Build, lokaler Test, Push, Terraform, End-to-End-Test)
+und schreibt ein Protokoll nach `logs/`. Interaktiv sind nur Azure-Login,
+Docker-Hub-Token, DB-Passwort und die Bestätigung von `terraform apply`.
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\deploy.ps1
+# Varianten
+powershell -ExecutionPolicy Bypass -File .\scripts\deploy.ps1 -SkipLocalTest
+powershell -ExecutionPolicy Bypass -File .\scripts\deploy.ps1 -SkipImage      # Image ist schon auf Docker Hub
+powershell -ExecutionPolicy Bypass -File .\scripts\deploy.ps1 -ImageTag 2.0.1
+
+# Rückbau
+powershell -ExecutionPolicy Bypass -File .\scripts\destroy.ps1
+```
+
+## Anleitung Schritt für Schritt (Windows PowerShell)
 
 Voraussetzungen: Azure CLI, Docker Desktop, Terraform ≥ 1.6, Git.
 Alle Befehle aus dem Repository-Root, sofern nicht anders angegeben.
