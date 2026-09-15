@@ -26,7 +26,7 @@ variable "project_name" {
 variable "tags" {
   description = "Tags für alle Ressourcen."
   type        = map(string)
-  default     = {
+  default = {
     project = "vicc-praxisarbeit"
     managed = "terraform"
   }
