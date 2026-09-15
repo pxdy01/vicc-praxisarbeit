@@ -1,0 +1,20 @@
+# Kopieren nach terraform.tfvars und Platzhalter ersetzen.
+# terraform.tfvars ist in .gitignore – niemals committen.
+
+subscription_id = "00000000-0000-0000-0000-000000000000"
+
+location     = "switzerlandnorth"
+project_name = "vicc"
+
+postgres_admin_username = "vicc_admin"
+# Passwort NICHT hier eintragen, sondern als Umgebungsvariable setzen:
+#   PowerShell: $env:TF_VAR_postgres_admin_password = Read-Host "DB-Passwort"
+#   Bash:       read -rs TF_VAR_postgres_admin_password && export TF_VAR_postgres_admin_password
+# postgres_admin_password = "<PLATZHALTER>"
+
+docker_image     = "patrikzauggipso/vicc-api"
+docker_image_tag = "2.0.0"
+
+# Nur nötig, falls das Docker-Hub-Repository privat ist (Read-only Access Token verwenden):
+# docker_registry_username = "<DOCKERHUB-USER>"
+# docker_registry_password = "<DOCKERHUB-READONLY-TOKEN>"
