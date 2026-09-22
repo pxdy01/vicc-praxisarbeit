@@ -126,7 +126,7 @@ variable "docker_image" {
 variable "docker_image_tag" {
   description = "Image-Tag."
   type        = string
-  default     = "2.0.0"
+  default     = "3.0.0"
 }
 
 variable "docker_registry_url" {

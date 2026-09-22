@@ -16,7 +16,7 @@
 param(
     [string]$DockerUser    = "patrikzauggipso",
     [string]$ImageName     = "vicc-api",
-    [string]$ImageTag      = "2.0.0",
+    [string]$ImageTag      = "3.0.0",
     [string]$SubscriptionId,
     [switch]$SkipImage,       # Build/Test/Push überspringen (Image bereits auf Docker Hub)
     [switch]$SkipLocalTest,   # lokalen Container-Test überspringen

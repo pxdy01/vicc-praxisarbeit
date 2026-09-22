@@ -38,7 +38,8 @@ try {
     Invoke-Native terraform @("-chdir=$TfDir", "destroy", "-input=false") "terraform destroy fehlgeschlagen"
     Write-Host ""
     Write-Host "Verbleibende VICC-Resource-Groups (sollte leer sein):" -ForegroundColor Cyan
-    Invoke-Native az @("group", "list", "--query", "[?starts_with(name,'rg-vicc')].name", "-o", "table") "az group list fehlgeschlagen"
+    $uebrig = & az group list --query "[].name" -o tsv | Where-Object { $_ -like "rg-vicc*" }
+    if ($uebrig) { $uebrig } else { Write-Host "  [OK]   keine rg-vicc-Ressourcengruppen mehr vorhanden" -ForegroundColor Green }
 }
 finally {
     if ($setDummy) { Remove-Item Env:TF_VAR_postgres_admin_password -ErrorAction SilentlyContinue }

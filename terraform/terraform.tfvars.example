@@ -13,7 +13,7 @@ postgres_admin_username = "vicc_admin"
 # postgres_admin_password = "<PLATZHALTER>"
 
 docker_image     = "patrikzauggipso/vicc-api"
-docker_image_tag = "2.0.0"
+docker_image_tag = "3.0.0"
 
 # Nur nötig, falls das Docker-Hub-Repository privat ist (Read-only Access Token verwenden):
 # docker_registry_username = "<DOCKERHUB-USER>"
